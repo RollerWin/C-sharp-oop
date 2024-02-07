@@ -1,0 +1,14 @@
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\bin\Debug\net7.0\work-with-class.exe
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\bin\Debug\net7.0\work-with-class.deps.json
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\bin\Debug\net7.0\work-with-class.runtimeconfig.json
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\bin\Debug\net7.0\work-with-class.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\bin\Debug\net7.0\work-with-class.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\obj\Debug\net7.0\work-with-class.GeneratedMSBuildEditorConfig.editorconfig
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\obj\Debug\net7.0\work-with-class.AssemblyInfoInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\obj\Debug\net7.0\work-with-class.AssemblyInfo.cs
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\obj\Debug\net7.0\work-with-class.csproj.CoreCompileInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\obj\Debug\net7.0\work-with-class.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\obj\Debug\net7.0\refint\work-with-class.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\obj\Debug\net7.0\work-with-class.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\obj\Debug\net7.0\work-with-class.genruntimeconfig.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\work-with-class\obj\Debug\net7.0\ref\work-with-class.dll

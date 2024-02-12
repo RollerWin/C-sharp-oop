@@ -2,13 +2,14 @@
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("Введите координаты X и Y");
         int positionX = ReadPositiveNumber();
         int positionY = ReadPositiveNumber();
 
         Player player = new Player(positionX, positionY);
         Renderer renderer = new Renderer();
 
-        renderer.DrawPlayer(player.X, player.Y, player.Character);
+        renderer.DrawPlayer(player.PositionX, player.PositionY, player.PlayerSymbol);
     }
 
     static int ReadPositiveNumber()
@@ -51,45 +52,14 @@ class Renderer
 
 class Player
 {
-    int _positionX;
-    int _positionY;
-    char _playerSymbol = '@';
+    public int PositionX {get; private set;}
+    public int PositionY {get; private set;}
+    public char PlayerSymbol {get; private set;}
 
-    public int X
+    public Player(int x, int y, char playerSymbol = '@')
     {
-        get
-        {
-            return _positionX;
-        }
-        private set
-        {
-            _positionX = value;
-        }
-    }
-
-    public int Y
-    {
-        get
-        {
-            return _positionY;
-        }
-        private set
-        {
-            _positionY = value;
-        }
-    }
-
-    public char Character
-    {
-        get
-        {
-            return _playerSymbol;
-        }
-    }
-
-    public Player(int x, int y)
-    {
-        _positionX = x;
-        _positionY = y;
+        PositionX = x;
+        PositionY = y;
+        PlayerSymbol = playerSymbol;
     }
 }

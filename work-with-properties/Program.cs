@@ -9,7 +9,7 @@
         Player player = new Player(positionX, positionY);
         Renderer renderer = new Renderer();
 
-        renderer.DrawPlayer(player.PositionX, player.PositionY, player.PlayerSymbol);
+        renderer.DrawPlayer(player);
     }
 
     static int ReadPositiveNumber()
@@ -40,12 +40,12 @@
 
 class Renderer
 {
-    public void DrawPlayer(int x, int y, char playerSymbol)
+    public void DrawPlayer(Player player)
     {
         Console.Clear();
         Console.CursorVisible = false;
-        Console.SetCursorPosition(x, y);
-        Console.Write(playerSymbol);
+        Console.SetCursorPosition(player.PositionX, player.PositionY);
+        Console.Write(player.PlayerSymbol);
         Console.ReadKey(true);
     }
 }

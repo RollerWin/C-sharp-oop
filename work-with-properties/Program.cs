@@ -52,14 +52,14 @@ class Renderer
 
 class Player
 {
+    public Player(int inputX, int inputY, char playerSymbol = '@')
+    {
+        PositionX = inputX;
+        PositionY = inputY;
+        PlayerSymbol = playerSymbol;
+    }
+
     public int PositionX {get; private set;}
     public int PositionY {get; private set;}
     public char PlayerSymbol {get; private set;}
-
-    public Player(int x, int y, char playerSymbol = '@')
-    {
-        PositionX = x;
-        PositionY = y;
-        PlayerSymbol = playerSymbol;
-    }
 }

@@ -2,7 +2,7 @@
 {
     static void Main(string[] args)
     {
-        PlayerDataBase Users = new PlayerDataBase();
+        Database Users = new Database();
         MenuHandler menuHandler = new MenuHandler(Users);
         
         menuHandler.RunMenu();
@@ -11,10 +11,10 @@
 
 class Player
 {
-    static private int _currentId = 1;
+    static private int s_currentId = 1;
     public Player(string inputName, int inputLevel)
     {
-        Id = _currentId++;
+        Id = s_currentId++;
         NickName = inputName;
         Level = inputLevel;
         isBanned = false;
@@ -30,48 +30,59 @@ class Player
     public void UnbanPlayer() => isBanned = false;
 }
 
-class PlayerDataBase
+class Database
 {
-    public PlayerDataBase() => Users = new List<Player>();
+    public Database() => Users = new List<Player>();
 
-    public List<Player> Users {get; set;} 
+    public List<Player> Users {get; private set;} 
 
     public void AddPlayer(Player player) => Users.Add(player);
 
     public void BanPlayerById(int userId)
     {
-        foreach(var user in Users)
-            if(user.Id == userId)
-                user.BanPlayer();
+        if(TryGetUser(userId, out Player player))
+            player.BanPlayer();
+        else
+            Console.WriteLine("Пользователь не найден!");
     }
 
     public void UnbanPlayerById(int userId)
     {
-        foreach(var user in Users)
-            if(user.Id == userId)
-                user.UnbanPlayer();
+        if(TryGetUser(userId, out Player player))
+            player.UnbanPlayer();
+        else
+            Console.WriteLine("Пользователь не найден!");
     }
 
     public void DeletePlayerById(int userId)
     {
-        Player playerToDelete = null;
-
-        foreach(var user in Users)
-            if(user.Id == userId)
-                playerToDelete = user;
-
-        if(Users.Contains(playerToDelete))
-            Users.Remove(playerToDelete);
+        if(TryGetUser(userId, out Player player))
+            Users.Remove(player);
         else
-        {
             Console.WriteLine("Пользователь не найден!");
-        }
     }
 
     public void ShowUsers()
     {
         foreach(var user in Users)
             Console.WriteLine(user.Id + " - " + user.NickName + " " + user.Level + " " + user.isBanned);
+    }
+
+    private bool TryGetUser(int userId, out Player player)
+    {
+        bool isFound = false;
+        player = null;
+
+        foreach(var user in Users)
+        {
+            if(user.Id == userId)
+            {
+                isFound = true;
+                player = user;
+            }
+        }
+
+        return isFound;
     }
 }
 
@@ -84,9 +95,9 @@ class MenuHandler
     const string CommandShowPlayers = "show";
     const string CommandExit = "exit";
 
-    private PlayerDataBase _users;
+    private Database _users;
 
-    public MenuHandler(PlayerDataBase users) => _users = users;
+    public MenuHandler(Database users) => _users = users;
 
     public void ShowMenu()
     {

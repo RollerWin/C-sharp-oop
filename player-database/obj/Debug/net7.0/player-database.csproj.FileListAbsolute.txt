@@ -1,0 +1,14 @@
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\bin\Debug\net7.0\player-database.exe
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\bin\Debug\net7.0\player-database.deps.json
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\bin\Debug\net7.0\player-database.runtimeconfig.json
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\bin\Debug\net7.0\player-database.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\bin\Debug\net7.0\player-database.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\obj\Debug\net7.0\player-database.GeneratedMSBuildEditorConfig.editorconfig
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\obj\Debug\net7.0\player-database.AssemblyInfoInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\obj\Debug\net7.0\player-database.AssemblyInfo.cs
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\obj\Debug\net7.0\player-database.csproj.CoreCompileInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\obj\Debug\net7.0\player-database.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\obj\Debug\net7.0\refint\player-database.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\obj\Debug\net7.0\player-database.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\obj\Debug\net7.0\player-database.genruntimeconfig.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\player-database\obj\Debug\net7.0\ref\player-database.dll

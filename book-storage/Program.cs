@@ -10,13 +10,17 @@
 
 class Book
 {
+    static private int s_currentId = 1;
+
     public Book(string inputName, string inputAuthor, int inputYear)
     {
+        Id = s_currentId++;
         Name = inputName;
         Author = inputAuthor;
         Year = inputYear;
     }
 
+    public int Id {get; private set;}
     public string Name {get; private set;}
     public string Author {get; private set;}
     public int Year {get; private set;}
@@ -34,26 +38,26 @@ class Storage
 
     public void GetBooks()
     {
-        Console.WriteLine("Название\tАвтор\tГод выпуска");
+        Console.WriteLine("Id  Название\tАвтор\tГод выпуска");
 
         foreach(var book in Books)
-            Console.WriteLine($"{book.Name}\t\t{book.Author}\t\t{book.Year}");
+            Console.WriteLine($"{book.Id}   {book.Name}\t\t{book.Author}\t\t{book.Year}");
     }
 
-    public bool TryGetBook(string bookName, string bookAuthor, int bookYear, out Book book)
+    public bool TryGetBook(int bookId, out Book book)
     {
         bool isFound = false;
         book = null;
 
         foreach(var storedBook in Books)
         {
-            if(storedBook.Name == bookName && storedBook.Author == bookAuthor && storedBook.Year == bookYear)
+            if(bookId == storedBook.Id)
             {
                 book = storedBook;
                 isFound = true;
             }
         }
-        
+
         return isFound;
     }
 }
@@ -122,18 +126,6 @@ class MenuHandler
         }
     }
 
-    private void InputBookInfo(out string bookName, out string bookAuthor, out int bookYear)
-    {
-        Console.Write("Название книги: ");
-        bookName = Console.ReadLine();
-
-        Console.Write("\nАвтор книги: ");
-        bookAuthor = Console.ReadLine();
-
-        Console.Write("\nГод выпуска книги: ");
-        bookYear = ReadPositiveNumber();
-    }
-
     private int ReadPositiveNumber()
     {
         string userInput;
@@ -161,16 +153,26 @@ class MenuHandler
 
     private void AddBook()
     {
-        InputBookInfo(out string bookName, out string bookAuthor, out int bookYear);
+        Console.Write("Название книги: ");
+        string bookName = Console.ReadLine();
+
+        Console.Write("\nАвтор книги: ");
+        string bookAuthor = Console.ReadLine();
+
+        Console.Write("\nГод выпуска книги: ");
+        int bookYear = ReadPositiveNumber();
+
         Book book = new Book(bookName, bookAuthor, bookYear);
         _books.AddBook(book);
     }
 
     private void RemoveBook()
     {
-        InputBookInfo(out string bookName, out string bookAuthor, out int bookYear);
-
-        if(_books.TryGetBook(bookName, bookAuthor, bookYear, out Book book))
+        Console.Write("Введите Id книги для удаления: ");
+        int bookId = ReadPositiveNumber();
+        Console.WriteLine();
+        
+        if(_books.TryGetBook(bookId, out Book book))
         {
             _books.RemoveBook(book);
         }

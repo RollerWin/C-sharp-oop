@@ -12,12 +12,12 @@ class Book
 {
     static private int s_currentId = 1;
 
-    public Book(string inputName, string inputAuthor, int inputYear)
+    public Book(string name, string author, int year)
     {
         Id = s_currentId++;
-        Name = inputName;
-        Author = inputAuthor;
-        Year = inputYear;
+        Name = name;
+        Author = author;
+        Year = year;
     }
 
     public int Id {get; private set;}
@@ -28,19 +28,21 @@ class Book
 
 class Storage
 {
-    public Storage() => Books = new List<Book>();
+    private List<Book> _books;
 
-    public List<Book> Books {get; private set;}
+    public Storage() => _books = new List<Book>();
 
-    public void AddBook(Book book) => Books.Add(book);
+    public List<Book> Books => new List<Book>(_books);
 
-    public void RemoveBook(Book book) => Books.Remove(book);
+    public void AddBook(Book book) => _books.Add(book);
+
+    public void RemoveBook(Book book) => _books.Remove(book);
 
     public void GetBooks()
     {
         Console.WriteLine("Id  Название\tАвтор\tГод выпуска");
 
-        foreach(var book in Books)
+        foreach(var book in _books)
             Console.WriteLine($"{book.Id}   {book.Name}\t\t{book.Author}\t\t{book.Year}");
     }
 
@@ -49,7 +51,7 @@ class Storage
         bool isFound = false;
         book = null;
 
-        foreach(var storedBook in Books)
+        foreach(var storedBook in _books)
         {
             if(bookId == storedBook.Id)
             {
@@ -66,16 +68,16 @@ class MenuHandler
 {
     const string CommandAddBook = "add";
     const string CommandRemoveBook = "remove";
-    const string CommandGetBook = "get";
+    const string CommandGetBook = "find";
     const string CommandGetBooks = "show";
     const string CommandExit = "exit";
     const string CommandGetBookByName = "name";
     const string CommandGetBookByAuthor = "author";
     const string CommandGetBookByYear = "year";
 
-    private Storage _books;
+    private Storage _storage;
 
-    public MenuHandler(Storage inputBooks) => _books = inputBooks;
+    public MenuHandler(Storage storage) => _storage = storage;
 
     public void ShowMenu() => Console.WriteLine
     (
@@ -105,11 +107,11 @@ class MenuHandler
                 break;
 
                 case CommandGetBook:
-                    GetBook();
+                    SearchBook();
                 break;
 
                 case CommandGetBooks:
-                    _books.GetBooks();
+                    _storage.GetBooks();
                 break;
 
                 case CommandExit:
@@ -163,7 +165,7 @@ class MenuHandler
         int bookYear = ReadPositiveNumber();
 
         Book book = new Book(bookName, bookAuthor, bookYear);
-        _books.AddBook(book);
+        _storage.AddBook(book);
     }
 
     private void RemoveBook()
@@ -172,9 +174,9 @@ class MenuHandler
         int bookId = ReadPositiveNumber();
         Console.WriteLine();
         
-        if(_books.TryGetBook(bookId, out Book book))
+        if(_storage.TryGetBook(bookId, out Book book))
         {
-            _books.RemoveBook(book);
+            _storage.RemoveBook(book);
         }
         else
         {
@@ -182,7 +184,7 @@ class MenuHandler
         }
     }
 
-    private void GetBook()
+    private void SearchBook()
     {
         ShowGetBookMenu();
 
@@ -220,7 +222,7 @@ class MenuHandler
 
         Console.WriteLine($"Найдены следующие книги с названием {bookName}:");
 
-        foreach(var book in _books.Books)
+        foreach(var book in _storage.Books)
             if(book.Name == bookName)
                 Console.WriteLine($"{book.Name} {book.Author} {book.Year}");
     }
@@ -232,7 +234,7 @@ class MenuHandler
 
         Console.WriteLine($"Найдены следующие книги за авторством {bookAuthor}:");
 
-        foreach(var book in _books.Books)
+        foreach(var book in _storage.Books)
             if(book.Author == bookAuthor)
                 Console.WriteLine($"{book.Name} {book.Author} {book.Year}");
     }
@@ -244,7 +246,7 @@ class MenuHandler
 
         Console.WriteLine($"Найдены следующие книги года выпуска {bookYear}:");
 
-        foreach(var book in _books.Books)
+        foreach(var book in _storage.Books)
             if(book.Year == bookYear)
                 Console.WriteLine($"{book.Name} {book.Author} {book.Year}");
     }

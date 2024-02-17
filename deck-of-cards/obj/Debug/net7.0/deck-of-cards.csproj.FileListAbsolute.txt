@@ -1,0 +1,14 @@
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\bin\Debug\net7.0\deck-of-cards.exe
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\bin\Debug\net7.0\deck-of-cards.deps.json
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\bin\Debug\net7.0\deck-of-cards.runtimeconfig.json
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\bin\Debug\net7.0\deck-of-cards.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\bin\Debug\net7.0\deck-of-cards.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\obj\Debug\net7.0\deck-of-cards.GeneratedMSBuildEditorConfig.editorconfig
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\obj\Debug\net7.0\deck-of-cards.AssemblyInfoInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\obj\Debug\net7.0\deck-of-cards.AssemblyInfo.cs
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\obj\Debug\net7.0\deck-of-cards.csproj.CoreCompileInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\obj\Debug\net7.0\deck-of-cards.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\obj\Debug\net7.0\refint\deck-of-cards.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\obj\Debug\net7.0\deck-of-cards.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\obj\Debug\net7.0\deck-of-cards.genruntimeconfig.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\deck-of-cards\obj\Debug\net7.0\ref\deck-of-cards.dll

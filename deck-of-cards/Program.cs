@@ -2,7 +2,13 @@
 {
     static void Main(string[] args)
     {
+        Deck defaultDeck = new Deck();
+        defaultDeck.ShuffleDeck();
 
+        foreach(var card in defaultDeck.DeckOfCards)
+        {
+            Console.WriteLine(card.Number + " " + card.Suit);
+        }
     }
 }
 

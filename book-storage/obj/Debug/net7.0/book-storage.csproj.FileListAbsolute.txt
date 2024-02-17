@@ -1,0 +1,14 @@
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\bin\Debug\net7.0\book-storage.exe
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\bin\Debug\net7.0\book-storage.deps.json
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\bin\Debug\net7.0\book-storage.runtimeconfig.json
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\bin\Debug\net7.0\book-storage.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\bin\Debug\net7.0\book-storage.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\obj\Debug\net7.0\book-storage.GeneratedMSBuildEditorConfig.editorconfig
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\obj\Debug\net7.0\book-storage.AssemblyInfoInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\obj\Debug\net7.0\book-storage.AssemblyInfo.cs
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\obj\Debug\net7.0\book-storage.csproj.CoreCompileInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\obj\Debug\net7.0\book-storage.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\obj\Debug\net7.0\refint\book-storage.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\obj\Debug\net7.0\book-storage.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\obj\Debug\net7.0\book-storage.genruntimeconfig.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\book-storage\obj\Debug\net7.0\ref\book-storage.dll

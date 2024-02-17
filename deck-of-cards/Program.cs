@@ -95,7 +95,6 @@ class Card
 class MenuHandler
 {
     const string CommandAddCard = "add";
-    const string CommandExit = "exit";
     const string CommandShuffleDeck = "shuffle";
     const string CommandStop = "stop";
 
@@ -114,8 +113,7 @@ class MenuHandler
         (
             $"{CommandAddCard} - Взять 1 карту\n" + 
             $"{CommandShuffleDeck} - перемешать коллоду\n" + 
-            $"{CommandStop} - прекратить брать карты\n" + 
-            $"{CommandExit} - Выход\n"
+            $"{CommandStop} - прекратить брать карты\n"
         );
     }
 
@@ -134,14 +132,10 @@ class MenuHandler
                 break;
 
                 case CommandShuffleDeck:
-                    ShuffleDeck();
+                    _deck.ShuffleDeck();
                 break;
 
                 case CommandStop:
-                    StopGame(ref isRun);
-                break;
-
-                case CommandExit:
                     isRun = false;
                 break;
 
@@ -153,6 +147,9 @@ class MenuHandler
             Console.ReadKey();
             Console.Clear();
         }
+
+        Console.WriteLine("Всего карт в вашей коллоде:");
+        _player.ShowDeck();
     }
 
     private void AddCard()
@@ -166,14 +163,5 @@ class MenuHandler
         {
             Console.WriteLine("Карты закончились!");
         }
-    }
-
-    private void ShuffleDeck() => _deck.ShuffleDeck();
-
-    private void StopGame(ref bool isRun)
-    {
-        isRun = false;
-        Console.WriteLine("Всего карт в вашей коллоде:");
-        _player.ShowDeck();
     }
 }

@@ -32,8 +32,6 @@ class Storage
 
     public Storage() => _books = new List<Book>();
 
-    public List<Book> Books => new List<Book>(_books);
-
     public void AddBook(Book book) => _books.Add(book);
 
     public void RemoveBook(Book book) => _books.Remove(book);
@@ -44,6 +42,27 @@ class Storage
 
         foreach(var book in _books)
             Console.WriteLine($"{book.Id}   {book.Name}\t\t{book.Author}\t\t{book.Year}");
+    }
+
+    public void SearchBookByName(string bookName)
+    {
+        foreach(var book in _books)
+            if(book.Name == bookName)
+                Console.WriteLine($"{book.Name} {book.Author} {book.Year}");
+    }
+
+    public void SearchBookByAuthor(string bookAuthor)
+    {
+        foreach(var book in _books)
+            if(book.Author == bookAuthor)
+                Console.WriteLine($"{book.Name} {book.Author} {book.Year}");
+    }
+
+    public void SearchBookByYear(int bookYear)
+    {
+        foreach(var book in _books)
+            if(book.Year == bookYear)
+                Console.WriteLine($"{book.Name} {book.Author} {book.Year}");
     }
 
     public bool TryGetBook(int bookId, out Book book)
@@ -221,10 +240,7 @@ class MenuHandler
         string bookName = Console.ReadLine();
 
         Console.WriteLine($"Найдены следующие книги с названием {bookName}:");
-
-        foreach(var book in _storage.Books)
-            if(book.Name == bookName)
-                Console.WriteLine($"{book.Name} {book.Author} {book.Year}");
+        _storage.SearchBookByName(bookName);    
     }
 
     private void SearchBookByAuthor()
@@ -233,10 +249,7 @@ class MenuHandler
         string bookAuthor = Console.ReadLine();
 
         Console.WriteLine($"Найдены следующие книги за авторством {bookAuthor}:");
-
-        foreach(var book in _storage.Books)
-            if(book.Author == bookAuthor)
-                Console.WriteLine($"{book.Name} {book.Author} {book.Year}");
+        _storage.SearchBookByAuthor(bookAuthor);
     }
 
     private void SearchBookByYear()
@@ -245,9 +258,6 @@ class MenuHandler
         int bookYear = ReadPositiveNumber();
 
         Console.WriteLine($"Найдены следующие книги года выпуска {bookYear}:");
-
-        foreach(var book in _storage.Books)
-            if(book.Year == bookYear)
-                Console.WriteLine($"{book.Name} {book.Author} {book.Year}");
+        _storage.SearchBookByYear(bookYear);
     }
 }

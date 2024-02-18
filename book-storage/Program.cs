@@ -38,7 +38,7 @@ class Storage
 
     public void RemoveBook(Book book) => _books.Remove(book);
 
-    public void GetBooks()
+    public void ShowBooks()
     {
         Console.WriteLine("Id  Название\tАвтор\tГод выпуска");
 
@@ -68,8 +68,8 @@ class MenuHandler
 {
     const string CommandAddBook = "add";
     const string CommandRemoveBook = "remove";
-    const string CommandGetBook = "find";
-    const string CommandGetBooks = "show";
+    const string CommandSearchBook = "find";
+    const string CommandShowBooks = "show";
     const string CommandExit = "exit";
     const string CommandGetBookByName = "name";
     const string CommandGetBookByAuthor = "author";
@@ -83,8 +83,8 @@ class MenuHandler
     (
         $"{CommandAddBook} - Добавить книгу\n" + 
         $"{CommandRemoveBook} - Убрать книгу\n" + 
-        $"{CommandGetBook} - Найти книгу\n" +
-        $"{CommandGetBooks} - Вывести все книги\n" + 
+        $"{CommandSearchBook} - Найти книгу\n" +
+        $"{CommandShowBooks} - Вывести все книги\n" + 
         $"{CommandExit} - Выход"
     );
 
@@ -106,12 +106,12 @@ class MenuHandler
                     RemoveBook();
                 break;
 
-                case CommandGetBook:
+                case CommandSearchBook:
                     SearchBook();
                 break;
 
-                case CommandGetBooks:
-                    _storage.GetBooks();
+                case CommandShowBooks:
+                    _storage.ShowBooks();
                 break;
 
                 case CommandExit:
@@ -186,7 +186,7 @@ class MenuHandler
 
     private void SearchBook()
     {
-        ShowGetBookMenu();
+        ShowSearchBookMenu();
 
         switch(Console.ReadLine())
         {
@@ -208,7 +208,7 @@ class MenuHandler
         }
     }
 
-    private void ShowGetBookMenu() => Console.WriteLine
+    private void ShowSearchBookMenu() => Console.WriteLine
     (
         $"{CommandGetBookByName} - Найти по имени\n" + 
         $"{CommandGetBookByAuthor} - Найти по автору\n" + 

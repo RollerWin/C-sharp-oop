@@ -1,0 +1,14 @@
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\bin\Debug\net7.0\Shop.exe
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\bin\Debug\net7.0\Shop.deps.json
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\bin\Debug\net7.0\Shop.runtimeconfig.json
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\bin\Debug\net7.0\Shop.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\bin\Debug\net7.0\Shop.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\obj\Debug\net7.0\Shop.GeneratedMSBuildEditorConfig.editorconfig
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\obj\Debug\net7.0\Shop.AssemblyInfoInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\obj\Debug\net7.0\Shop.AssemblyInfo.cs
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\obj\Debug\net7.0\Shop.csproj.CoreCompileInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\obj\Debug\net7.0\Shop.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\obj\Debug\net7.0\refint\Shop.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\obj\Debug\net7.0\Shop.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\obj\Debug\net7.0\Shop.genruntimeconfig.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\Shop\obj\Debug\net7.0\ref\Shop.dll

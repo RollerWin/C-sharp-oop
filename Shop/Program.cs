@@ -1,4 +1,7 @@
-﻿class Program
+﻿using System.Data.SqlTypes;
+using System.Dynamic;
+
+class Program
 {
     static void Main(string[] args)
     {
@@ -8,8 +11,8 @@
         int playerMoney = ReadPositiveNumber();
         Player player = new Player(playerMoney);
 
-        MenuHandler menuHandler = new MenuHandler(seller, player);
-        menuHandler.RunMenu();
+        Shop Shop = new Shop(seller, player);
+        Shop.RunMenu();
     }
 
     static int ReadPositiveNumber()
@@ -52,13 +55,19 @@ class Item
 
 class Human
 {
-    protected List<Item> _inventory;
+    protected List<Item> Inventory;
 
-    public Human() => _inventory = new List<Item>();
+    public Human()
+    {
+        Inventory = new List<Item>();
+        Money = 0;
+    } 
+
+    public int Money {get; protected set;}
 
     public void ShowInventory()
     {
-        foreach(var item in _inventory)
+        foreach(var item in Inventory)
             Console.WriteLine($"Предмет: {item.Name}\tЦена: {item.Price}");
     } 
 }
@@ -67,10 +76,10 @@ class Seller : Human
 {
     public Seller() : base()
     {
-        _inventory.Add(new Item("health potion", 10));
-        _inventory.Add(new Item("mana potion", 15));
-        _inventory.Add(new Item("silver sword", 20));
-        _inventory.Add(new Item("iron armor", 30));
+        Inventory.Add(new Item("health potion", 10));
+        Inventory.Add(new Item("mana potion", 15));
+        Inventory.Add(new Item("silver sword", 20));
+        Inventory.Add(new Item("iron armor", 30));
     }
 
     public bool TryGetItem(string itemName, out Item sellItem)
@@ -78,7 +87,7 @@ class Seller : Human
         bool isFound = false;
         sellItem = null;
 
-        foreach(var item  in _inventory)
+        foreach(var item  in Inventory)
         {
             if(itemName == item.Name)
             {
@@ -90,7 +99,11 @@ class Seller : Human
         return isFound;
     }
 
-    public void SellProduct(Item item) => _inventory.Remove(item);
+    public void SellProduct(Item item)
+    {
+        Inventory.Remove(item);
+        Money += item.Price;
+    }
 }
 
 class Player : Human
@@ -100,8 +113,6 @@ class Player : Human
         Money = money;
     }
 
-    public int Money {get; private set;}
-
     public bool CanPay(int price) 
     {
         return Money >= price;
@@ -109,22 +120,22 @@ class Player : Human
 
     public void BuyProduct(Item purchasedItem)
     {
-        _inventory.Add(purchasedItem);
+        Inventory.Add(purchasedItem);
         Money -= purchasedItem.Price;
     }
 }
 
-class MenuHandler
+class Shop
 {
-    const string CommandShowSellerItems = "showcase";
-    const string CommandShowPlayerItems = "inventory";
-    const string CommandBuyItem = "buy";
-    const string CommandExit = "exit";
+    const string SellerItems = "showcase";
+    const string PlayerItems = "inventory";
+    const string MakeDeal = "buy";
+    const string Exit = "exit";
 
     private Seller _seller;
     private Player _player;
 
-    public MenuHandler(Seller seller, Player player)
+    public Shop(Seller seller, Player player)
     {
         _seller = seller;
         _player = player;
@@ -132,10 +143,10 @@ class MenuHandler
 
     public void ShowMenu() => Console.WriteLine
     (
-        $"{CommandShowSellerItems} - Посмотреть предметы на продажу\n" +
-        $"{CommandShowPlayerItems} - Посмотреть свои предметы\n" +
-        $"{CommandBuyItem} - Купить продукт\n" +
-        $"{CommandExit} - Выход\n"
+        $"{SellerItems} - Посмотреть предметы на продажу\n" +
+        $"{PlayerItems} - Посмотреть свои предметы\n" +
+        $"{MakeDeal} - Купить продукт\n" +
+        $"{Exit} - Выход\n"
     );
 
     public void RunMenu()
@@ -148,19 +159,19 @@ class MenuHandler
 
             switch(Console.ReadLine())
             {
-                case CommandShowSellerItems:
+                case SellerItems:
                     _seller.ShowInventory();
                 break;
 
-                case CommandShowPlayerItems:
+                case PlayerItems:
                     _player.ShowInventory();
                 break;
 
-                case CommandBuyItem:
-                    BuyItem();
+                case MakeDeal:
+                    Trade();
                 break;
 
-                case CommandExit:
+                case Exit:
                     isRun = false;
                 break;
 
@@ -174,7 +185,7 @@ class MenuHandler
         }
     }
 
-    private void BuyItem()
+    private void Trade()
     {
         _seller.ShowInventory();
         Console.WriteLine($"\nСейчас у вас {_player.Money} монет");

@@ -71,9 +71,9 @@ class MenuHandler
     const string CommandSearchBook = "find";
     const string CommandShowBooks = "show";
     const string CommandExit = "exit";
-    const string CommandGetBookByName = "name";
-    const string CommandGetBookByAuthor = "author";
-    const string CommandGetBookByYear = "year";
+    const string CommandSearchBookByName = "name";
+    const string CommandSearchBookByAuthor = "author";
+    const string CommandSearchBookByYear = "year";
 
     private Storage _storage;
 
@@ -190,16 +190,16 @@ class MenuHandler
 
         switch(Console.ReadLine())
         {
-            case CommandGetBookByName:
-                GetBookByName();
+            case CommandSearchBookByName:
+                SearchBookByName();
             break;
 
-            case CommandGetBookByAuthor:
-                GetBookByAuthor();
+            case CommandSearchBookByAuthor:
+                SearchBookByAuthor();
             break;
 
-            case CommandGetBookByYear:
-                GetBookByYear();
+            case CommandSearchBookByYear:
+                SearchBookByYear();
             break;
 
             default:
@@ -210,12 +210,12 @@ class MenuHandler
 
     private void ShowSearchBookMenu() => Console.WriteLine
     (
-        $"{CommandGetBookByName} - Найти по имени\n" + 
-        $"{CommandGetBookByAuthor} - Найти по автору\n" + 
-        $"{CommandGetBookByYear} - Найти по году"
+        $"{CommandSearchBookByName} - Найти по имени\n" + 
+        $"{CommandSearchBookByAuthor} - Найти по автору\n" + 
+        $"{CommandSearchBookByYear} - Найти по году"
     );
 
-    private void GetBookByName()
+    private void SearchBookByName()
     {
         Console.Write("Введите название книги: ");
         string bookName = Console.ReadLine();
@@ -227,7 +227,7 @@ class MenuHandler
                 Console.WriteLine($"{book.Name} {book.Author} {book.Year}");
     }
 
-    private void GetBookByAuthor()
+    private void SearchBookByAuthor()
     {
         Console.Write("Введите автора: ");
         string bookAuthor = Console.ReadLine();
@@ -239,7 +239,7 @@ class MenuHandler
                 Console.WriteLine($"{book.Name} {book.Author} {book.Year}");
     }
 
-    private void GetBookByYear()
+    private void SearchBookByYear()
     {
         Console.Write("Введите год выпуска: ");
         int bookYear = ReadPositiveNumber();

@@ -102,7 +102,10 @@ class Player : Human
 
     public int Money {get; private set;}
 
-    public bool TryBuyProduct(Item purchasedItem) => purchasedItem.Price <= Money ? true : false;
+    public bool CanPay(int price) 
+    {
+        return Money >= price;
+    }
 
     public void BuyProduct(Item purchasedItem)
     {
@@ -179,7 +182,7 @@ class MenuHandler
         string itemName = Console.ReadLine();
         Console.WriteLine();
 
-        if(_seller.TryGetItem(itemName, out Item item) && _player.TryBuyProduct(item))
+        if(_seller.TryGetItem(itemName, out Item item) && _player.CanPay(item.Price))
         {
             _seller.SellProduct(item);
             _player.BuyProduct(item);

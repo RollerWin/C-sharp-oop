@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\Shop\\Shop.csproj": {}
+    "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\shop\\Shop.csproj": {}
   },
   "projects": {
-    "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\Shop\\Shop.csproj": {
+    "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\shop\\Shop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\Shop\\Shop.csproj",
+        "projectUniqueName": "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\shop\\Shop.csproj",
         "projectName": "Shop",
-        "projectPath": "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\Shop\\Shop.csproj",
+        "projectPath": "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\shop\\Shop.csproj",
         "packagesPath": "C:\\Users\\Ринат\\.nuget\\packages\\",
-        "outputPath": "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\Shop\\obj\\",
+        "outputPath": "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\shop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ринат\\AppData\\Roaming\\NuGet\\NuGet.Config",

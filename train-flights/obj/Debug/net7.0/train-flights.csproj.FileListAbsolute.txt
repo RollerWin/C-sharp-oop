@@ -1,0 +1,14 @@
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\bin\Debug\net7.0\train-flights.exe
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\bin\Debug\net7.0\train-flights.deps.json
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\bin\Debug\net7.0\train-flights.runtimeconfig.json
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\bin\Debug\net7.0\train-flights.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\bin\Debug\net7.0\train-flights.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\obj\Debug\net7.0\train-flights.GeneratedMSBuildEditorConfig.editorconfig
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\obj\Debug\net7.0\train-flights.AssemblyInfoInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\obj\Debug\net7.0\train-flights.AssemblyInfo.cs
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\obj\Debug\net7.0\train-flights.csproj.CoreCompileInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\obj\Debug\net7.0\train-flights.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\obj\Debug\net7.0\refint\train-flights.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\obj\Debug\net7.0\train-flights.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\obj\Debug\net7.0\train-flights.genruntimeconfig.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\train-flights\obj\Debug\net7.0\ref\train-flights.dll

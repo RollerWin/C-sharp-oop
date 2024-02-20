@@ -100,8 +100,8 @@
 
 class Flight
 {
-    const int MinCapacityValue = 1;
-    const int MaxCapacityValue = 100; 
+    private const int MinCapacityValue = 1;
+    private const int MaxCapacityValue = 100; 
     private Train _train;
 
     public Flight(Route route, DateTime departureTime)
@@ -136,17 +136,17 @@ class Route
 
 class Train
 {
-    private List<Wagon> _train;
+    private List<Wagon> _wagons;
 
-    public Train() => _train = new List<Wagon>();
+    public Train() => _wagons = new List<Wagon>();
 
-    public void AddWagon(Wagon wagon) => _train.Add(wagon);
+    public void AddWagon(Wagon wagon) => _wagons.Add(wagon);
 
     public int GetTotalCapacity()
     {
         int totalCapacity = 0;
 
-        foreach(var wagon in _train)
+        foreach(var wagon in _wagons)
             totalCapacity += wagon.Capacity;
         
         return totalCapacity;

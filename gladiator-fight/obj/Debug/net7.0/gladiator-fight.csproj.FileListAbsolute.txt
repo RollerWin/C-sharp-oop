@@ -12,3 +12,17 @@ D:\Soft\учёба\новыйЯЮниор\OOP\gladiator-fight\obj\Debug\net7.0\r
 D:\Soft\учёба\новыйЯЮниор\OOP\gladiator-fight\obj\Debug\net7.0\gladiator-fight.pdb
 D:\Soft\учёба\новыйЯЮниор\OOP\gladiator-fight\obj\Debug\net7.0\gladiator-fight.genruntimeconfig.cache
 D:\Soft\учёба\новыйЯЮниор\OOP\gladiator-fight\obj\Debug\net7.0\ref\gladiator-fight.dll
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\bin\Debug\net7.0\gladiator-fight.exe
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\bin\Debug\net7.0\gladiator-fight.deps.json
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\bin\Debug\net7.0\gladiator-fight.runtimeconfig.json
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\bin\Debug\net7.0\gladiator-fight.dll
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\bin\Debug\net7.0\gladiator-fight.pdb
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\obj\Debug\net7.0\gladiator-fight.GeneratedMSBuildEditorConfig.editorconfig
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\obj\Debug\net7.0\gladiator-fight.AssemblyInfoInputs.cache
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\obj\Debug\net7.0\gladiator-fight.AssemblyInfo.cs
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\obj\Debug\net7.0\gladiator-fight.csproj.CoreCompileInputs.cache
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\obj\Debug\net7.0\gladiator-fight.dll
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\obj\Debug\net7.0\refint\gladiator-fight.dll
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\obj\Debug\net7.0\gladiator-fight.pdb
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\obj\Debug\net7.0\gladiator-fight.genruntimeconfig.cache
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gladiator-fight\obj\Debug\net7.0\ref\gladiator-fight.dll

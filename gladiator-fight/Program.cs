@@ -7,7 +7,7 @@
     }
 }
 
-class Fighter
+abstract class Fighter
 {
     public Fighter(int health, int damage, string name)
     {
@@ -24,7 +24,7 @@ class Fighter
 
     public virtual void Attack(Fighter enemy) => enemy.TakeDamage(Damage);
 
-    public Fighter Clone() => new Fighter(Health, Damage, Name);
+    public abstract Fighter Clone();
 }
 
 class Witcher : Fighter
@@ -55,6 +55,8 @@ class Witcher : Fighter
 
         enemy.TakeDamage(damageOutput);
     }
+
+    public override Fighter Clone() => new Witcher(Health, Damage, Name);
 }
 
 class Ninja : Fighter
@@ -85,6 +87,8 @@ class Ninja : Fighter
             base.TakeDamage(enemyDamage);
         }
     }
+
+    public override Fighter Clone() => new Ninja(Health, Damage, Name);
 }
 
 class Knight : Fighter
@@ -94,6 +98,8 @@ class Knight : Fighter
     public Knight(int health, int damage, string name) : base(health, damage, name) {}
 
     public override void TakeDamage(int enemyDamage) => base.TakeDamage(enemyDamage - _blockDamage);
+
+    public override Fighter Clone() => new Knight(Health, Damage, Name);
 }
 
 class Medic : Fighter
@@ -109,6 +115,8 @@ class Medic : Fighter
     }
 
     public void Heal() => Health += _healPower;
+
+    public override Fighter Clone() => new Medic(Health, Damage, Name);
 }
 
 class Berserk : Fighter
@@ -135,6 +143,8 @@ class Berserk : Fighter
     {
         return Health <= LowerHealthThreashold;
     }
+
+    public override Fighter Clone() => new Berserk(Health, Damage, Name);
 
     public void ActivateBerserkMode() => Damage *= DamagePowerUpCoefficient;
 }
@@ -229,7 +239,7 @@ class Arena
 
     public void DetectResult(Fighter fighter1, Fighter fighter2)
     {
-        if(fighter1.Health < 0 && fighter2.Health < 0)
+        if(fighter1.Health <= 0 && fighter2.Health <= 0)
         {
             Console.WriteLine("Ничья!");
         }

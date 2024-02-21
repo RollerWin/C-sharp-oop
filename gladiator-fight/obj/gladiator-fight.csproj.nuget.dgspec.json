@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\gladiator-fight\\gladiator-fight.csproj": {}
+    "D:\\Хранилище для работы\\ЯЮниорНовый\\C-sharp-oop\\gladiator-fight\\gladiator-fight.csproj": {}
   },
   "projects": {
-    "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\gladiator-fight\\gladiator-fight.csproj": {
+    "D:\\Хранилище для работы\\ЯЮниорНовый\\C-sharp-oop\\gladiator-fight\\gladiator-fight.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\gladiator-fight\\gladiator-fight.csproj",
+        "projectUniqueName": "D:\\Хранилище для работы\\ЯЮниорНовый\\C-sharp-oop\\gladiator-fight\\gladiator-fight.csproj",
         "projectName": "gladiator-fight",
-        "projectPath": "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\gladiator-fight\\gladiator-fight.csproj",
-        "packagesPath": "C:\\Users\\Ринат\\.nuget\\packages\\",
-        "outputPath": "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\gladiator-fight\\obj\\",
+        "projectPath": "D:\\Хранилище для работы\\ЯЮниорНовый\\C-sharp-oop\\gladiator-fight\\gladiator-fight.csproj",
+        "packagesPath": "C:\\Users\\maryy\\.nuget\\packages\\",
+        "outputPath": "D:\\Хранилище для работы\\ЯЮниорНовый\\C-sharp-oop\\gladiator-fight\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ринат\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maryy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

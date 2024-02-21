@@ -2,66 +2,8 @@
 {
     static void Main(string[] args)
     {
-        Barrack barrack = new Barrack();
-        barrack.ShowFighters();
-
-        Console.Write("Выберите первого бойца по индексу: ");
-        int fighterIndex = ReadCorrectIndex(barrack.GetNumberOfFighters());
-        Fighter fighter1 = barrack.GetFighter(fighterIndex - 1);
-
-        Console.Write("Выберите второго бойца по индексу: ");
-        fighterIndex = ReadCorrectIndex(barrack.GetNumberOfFighters());
-        Fighter fighter2 = barrack.GetFighter(fighterIndex - 1);
-
-        while(fighter1.Health > 0 &&  fighter2.Health > 0)
-        {
-            fighter1.Attack(fighter2);
-            fighter2.Attack(fighter1);
-
-            Console.WriteLine("Игрок 1 наносит урон! Здоровье игрока 2: " + fighter2.Health);
-            Console.WriteLine("Игрок 2 наносит урон! Здоровье игрока 1: " + fighter1.Health);
-
-            Console.ReadKey();
-            Console.WriteLine();
-        }
-
-        if(fighter1.Health < 0 && fighter2.Health < 0)
-        {
-            Console.WriteLine("Ничья!");
-        }
-        else if(fighter1.Health <= 0)
-        {
-            Console.WriteLine("Игрок 2 победил!");
-        }
-        else
-        {
-            Console.WriteLine("Игрок 1 победил!");
-        }
-    }
-
-    static int ReadCorrectIndex(int maxValue)
-    {
-        string userInput;
-        bool isCorrect = false;
-        int correctNumber = 0;
-
-        while(isCorrect != true)
-        {
-            userInput = Console.ReadLine();
-
-            if(int.TryParse(userInput, out correctNumber) && correctNumber > 0 && correctNumber <= maxValue)
-            {
-                isCorrect = true;
-            }
-            else
-            {
-                Console.WriteLine("Некорректный ввод! Попробуйте ещё раз");
-                Console.ReadKey();
-                Console.Clear();
-            }
-        }
-
-        return correctNumber;
+        Arena arena = new Arena();
+        arena.RunFight();
     }
 }
 
@@ -78,14 +20,17 @@ class Fighter
     public int Health {get; protected set;}
     public int Damage {get; protected set;}
 
-    public virtual void TakeDamage(int EnemyDamage) => Health -= EnemyDamage;
+    public virtual void TakeDamage(int enemyDamage) => Health -= enemyDamage;
 
     public virtual void Attack(Fighter enemy) => enemy.TakeDamage(Damage);
+
+    public Fighter Clone() => new Fighter(Health, Damage, Name);
 }
 
 class Witcher : Fighter
 {
     const int PotionCoolDown = 3;
+
     private int _stepCounter = 0;
     private int _potionDamage = 40;
 
@@ -129,7 +74,7 @@ class Ninja : Fighter
         return  dodgeChance <= DodgePercent;
     }
 
-    public override void TakeDamage(int EnemyDamage)
+    public override void TakeDamage(int enemyDamage)
     {
         if(CanDodge())
         {
@@ -137,7 +82,7 @@ class Ninja : Fighter
         }
         else
         {
-            base.TakeDamage(EnemyDamage);
+            base.TakeDamage(enemyDamage);
         }
     }
 }
@@ -148,7 +93,7 @@ class Knight : Fighter
 
     public Knight(int health, int damage, string name) : base(health, damage, name) {}
 
-    public override void TakeDamage(int EnemyDamage) => base.TakeDamage(EnemyDamage - _blockDamage);
+    public override void TakeDamage(int enemyDamage) => base.TakeDamage(enemyDamage - _blockDamage);
 }
 
 class Medic : Fighter
@@ -157,9 +102,9 @@ class Medic : Fighter
 
     public Medic(int health, int damage, string name) : base(health, damage, name) {}
 
-    public override void TakeDamage(int EnemyDamage)
+    public override void TakeDamage(int enemyDamage)
     {
-        base.TakeDamage(EnemyDamage);
+        base.TakeDamage(enemyDamage);
         Heal();
     }
 
@@ -170,22 +115,23 @@ class Berserk : Fighter
 {
     private const int LowerHealthThreashold = 30;
     private const int DamagePowerUpCoefficient = 2;
+
     private bool _isBerserkActivated = false;
 
     public Berserk(int health, int damage, string name) : base(health, damage, name) {}
 
-    public override void TakeDamage(int EnemyDamage)
+    public override void TakeDamage(int enemyDamage)
     {
-        base.TakeDamage(EnemyDamage);
+        base.TakeDamage(enemyDamage);
 
-        if(HealthCheck() && _isBerserkActivated == false)
+        if(IsInBerserkMode() && _isBerserkActivated == false)
         {
             ActivateBerserkMode();
             _isBerserkActivated = true;
         }
     }
 
-    public bool HealthCheck()
+    public bool IsInBerserkMode()
     {
         return Health <= LowerHealthThreashold;
     }
@@ -216,4 +162,84 @@ class Barrack
 
     public Fighter GetFighter(int index) => _fighters[index];
     public int GetNumberOfFighters() => _fighters.Count;
+}
+
+class Arena
+{
+    private Barrack _barrack;
+    private Fighter _fighter1;
+    private Fighter _fighter2;
+
+    public Arena() => _barrack = new Barrack();
+
+    private Fighter ChooseFighter(Barrack barrack)
+    {
+        Console.Write("Выберите бойца по индексу: ");
+        int fighterIndex = ReadCorrectIndex(barrack.GetNumberOfFighters());
+        Fighter chosenFighter = barrack.GetFighter(fighterIndex - 1);
+
+        return chosenFighter.Clone();
+    }
+
+    private int ReadCorrectIndex(int maxValue)
+    {
+        string userInput;
+        bool isCorrect = false;
+        int correctNumber = 0;
+
+        while(isCorrect != true)
+        {
+            userInput = Console.ReadLine();
+
+            if(int.TryParse(userInput, out correctNumber) && correctNumber > 0 && correctNumber <= maxValue)
+            {
+                isCorrect = true;
+            }
+            else
+            {
+                Console.WriteLine("Некорректный ввод! Попробуйте ещё раз");
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+
+        return correctNumber;
+    }
+
+    public void RunFight()
+    {
+        _barrack.ShowFighters();
+        _fighter1 = ChooseFighter(_barrack);
+        _fighter2 = ChooseFighter(_barrack);
+
+        while(_fighter1.Health > 0 &&  _fighter2.Health > 0)
+        {
+            _fighter1.Attack(_fighter2);
+            _fighter2.Attack(_fighter1);
+
+            Console.WriteLine("Игрок 1 наносит урон! Здоровье игрока 2: " + _fighter2.Health);
+            Console.WriteLine("Игрок 2 наносит урон! Здоровье игрока 1: " + _fighter1.Health);
+
+            Console.ReadKey();
+            Console.WriteLine();
+        }
+
+        DetectResult(_fighter1, _fighter2);
+    }
+
+    public void DetectResult(Fighter fighter1, Fighter fighter2)
+    {
+        if(fighter1.Health < 0 && fighter2.Health < 0)
+        {
+            Console.WriteLine("Ничья!");
+        }
+        else if(fighter1.Health <= 0)
+        {
+            Console.WriteLine("Игрок 2 победил!");
+        }
+        else
+        {
+            Console.WriteLine("Игрок 1 победил!");
+        }
+    }    
 }

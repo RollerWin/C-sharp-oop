@@ -24,7 +24,7 @@ class Fighter
 
     public virtual void Attack(Fighter enemy) => enemy.TakeDamage(Damage);
 
-    public Fighter Clone() => new Fighter(Health, Damage, Name);
+    public virtual Fighter Clone() => new Fighter(Health, Damage, Name);
 }
 
 class Witcher : Fighter
@@ -55,6 +55,8 @@ class Witcher : Fighter
 
         enemy.TakeDamage(damageOutput);
     }
+
+    public override Fighter Clone() => new Witcher(Health, Damage, Name);
 }
 
 class Ninja : Fighter
@@ -161,6 +163,7 @@ class Barrack
     }
 
     public Fighter GetFighter(int index) => _fighters[index];
+
     public int GetNumberOfFighters() => _fighters.Count;
 }
 

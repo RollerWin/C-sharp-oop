@@ -1,0 +1,14 @@
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\bin\Debug\net7.0\supermarket.exe
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\bin\Debug\net7.0\supermarket.deps.json
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\bin\Debug\net7.0\supermarket.runtimeconfig.json
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\bin\Debug\net7.0\supermarket.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\bin\Debug\net7.0\supermarket.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\obj\Debug\net7.0\supermarket.GeneratedMSBuildEditorConfig.editorconfig
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\obj\Debug\net7.0\supermarket.AssemblyInfoInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\obj\Debug\net7.0\supermarket.AssemblyInfo.cs
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\obj\Debug\net7.0\supermarket.csproj.CoreCompileInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\obj\Debug\net7.0\supermarket.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\obj\Debug\net7.0\refint\supermarket.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\obj\Debug\net7.0\supermarket.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\obj\Debug\net7.0\supermarket.genruntimeconfig.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\supermarket\obj\Debug\net7.0\ref\supermarket.dll

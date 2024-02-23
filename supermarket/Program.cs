@@ -3,7 +3,7 @@
     static void Main(string[] args)
     {
         Supermarket supermarket = new Supermarket();
-        supermarket.WorkSupermarket();
+        supermarket.Work();
     }
 }
 
@@ -18,7 +18,8 @@ class Client
     } 
 
     public int Money {get; private set;}
-    
+    public int GetNumberOfProducts => _products.Count;
+
     public int GetAmountOfProducts()
     {
         int amountOfProducts = 0;
@@ -28,8 +29,6 @@ class Client
 
         return amountOfProducts;
     }
-
-    public int GetNumberOfProducts => _products.Count;
 
     public void RemoveRandomProduct()
     {
@@ -69,6 +68,27 @@ class Supermarket
         
         FillShelves();
         AddClients();
+    }
+
+    public void Work()
+    {
+        while(_clients.Count > 0)
+        {
+            Client client = _clients.Dequeue();
+            int amountOfProducts = client.GetAmountOfProducts();
+            Console.WriteLine($"Клиент пришёл на кассу\nОбщая сумма его товаров: {amountOfProducts}\tДенег у клиента: {client.Money}");
+
+            while(client.CanPay() == false)
+            {
+                client.RemoveRandomProduct();
+
+                amountOfProducts = client.GetAmountOfProducts();
+                Console.WriteLine($"Теперь товаров на сумму {amountOfProducts}");
+            }
+
+            client.PayProduct(amountOfProducts);
+            Console.WriteLine("Все товары оплачены!\n");
+        }
     }
 
     private void FillShelves()
@@ -124,34 +144,5 @@ class Supermarket
         }
 
         return clientCart;
-    }
-
-    public void WorkSupermarket()
-    {
-        while(_clients.Count > 0)
-        {
-            Client client = _clients.Dequeue();
-            int amountOfProducts = client.GetAmountOfProducts();
-            Console.WriteLine($"Клиент пришёл на кассу\nОбщая сумма его товаров: {amountOfProducts}\tДенег у клиента: {client.Money}");
-
-            if(client.CanPay())
-            {
-                client.PayProduct(amountOfProducts);
-            }
-            else
-            {
-                while(client.CanPay() == false)
-                {
-                    client.RemoveRandomProduct();
-
-                    amountOfProducts = client.GetAmountOfProducts();
-                    Console.WriteLine($"Теперь товаров на сумму {amountOfProducts}");
-                }
-
-                client.PayProduct(amountOfProducts);
-            }
-
-            Console.WriteLine("Все товары оплачены!\n");
-        }
     }
 }

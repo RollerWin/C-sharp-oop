@@ -117,7 +117,7 @@ abstract class Soldier
 
         double hitChance = UserUtils.GenerateRandomValue(minProbabilityPercent, maxProbabilityPercent);
 
-        hitChance /= 100;
+        hitChance /= maxProbabilityPercent;
 
         return  hitChance <= HitPercentByItself * enemyWeaponHitProbability;
     }
@@ -202,7 +202,7 @@ class Engineer : Soldier
 class Support : Soldier
 {
     private int _smokeCoolDown = 3;
-    private double hitPercentThroughSmoke = 0.4;
+    private double _hitPercentThroughSmoke = 0.4;
     private int _currentStep = 0;
     private int _stepToShoot = 0;
 
@@ -213,7 +213,7 @@ class Support : Soldier
         if(_currentStep == _stepToShoot)
         {
             _currentStep = _smokeCoolDown;
-            allySoldier.SetHitPercent(hitPercentThroughSmoke);
+            allySoldier.SetHitPercent(_hitPercentThroughSmoke);
             Console.WriteLine($"Поддержка кинула дымовую гранату в союзника {allySoldier.Name}!\nТеперь процент попадания по нему {allySoldier.HitPercentByItself}!\n");
         }
         else
@@ -228,7 +228,6 @@ class Support : Soldier
 class Sniper : Soldier
 {
     private int _criticalDamageCoolDown = 3;
-    
     private int _criticalDamageCoefficient = 3;
     private int _currentStep = 0;
     private int _stepToShoot = 0;

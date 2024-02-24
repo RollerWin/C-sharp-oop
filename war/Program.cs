@@ -84,9 +84,7 @@ class Squad
     public void ShowSoldiers()
     {
         foreach(var soldier in _soldiers)
-        {
             Console.WriteLine($"{soldier.Name}\tЗдоровье: {soldier.Health}\tАтака: {soldier.Damage}");
-        }
 
         Console.WriteLine();
     }
@@ -273,8 +271,6 @@ class ClassesMenu
     }
 
     public int GetNumberOfClasses => _soldiers.Count;
-
-    public string GetClassNameById(int index) => _soldiers[index].Name;
 
     public Soldier GetSoldier(int index) => _soldiers[index].Clone();
 }

@@ -2,47 +2,8 @@
 {
     static void Main(string[] agrs)
     {
-        Country russia = new Country("russia");
-        Country usa = new Country("usa");
-
-        bool firstPlayerTurn = true;
-
-        russia.AllySquad.ShowSoldiers();
-        usa.AllySquad.ShowSoldiers();
-        Console.ReadKey();
-
-        while(russia.IsSquadExist() && usa.IsSquadExist())
-        {
-            if(firstPlayerTurn)
-            {
-                Console.WriteLine("Ход за первой страной!");
-                Console.WriteLine($"У первой страны осталось {russia.AllySquad.GetNumberOfSoldiers} солдат\nУ второй страны осталось {usa.AllySquad.GetNumberOfSoldiers} солдат\n");
-                russia.AllySquad.AttackEnemies(usa.AllySquad);
-                firstPlayerTurn = false;
-            }
-            else
-            {
-                Console.WriteLine("Ход за второй страной!");
-                Console.WriteLine($"У первой страны осталось {russia.AllySquad.GetNumberOfSoldiers} солдат\nУ второй страны осталось {usa.AllySquad.GetNumberOfSoldiers} солдат\n");
-                usa.AllySquad.AttackEnemies(russia.AllySquad);
-                firstPlayerTurn = true;
-            }
-
-            russia.AllySquad.RemoveDiedSoldiers();
-            usa.AllySquad.RemoveDiedSoldiers();
-
-            Console.WriteLine();
-            Console.ReadKey();
-        }
-
-        if(russia.IsSquadExist())
-        {
-            Console.WriteLine("Победа за первой страной!");
-        }
-        else
-        {
-            Console.WriteLine("Победа за второй страной!");
-        }
+       Battlefield battlefield = new Battlefield();
+       battlefield.RunAction();
     }
 }
 
@@ -316,4 +277,70 @@ class ClassesMenu
     public string GetClassNameById(int index) => _soldiers[index].Name;
 
     public Soldier GetSoldier(int index) => _soldiers[index].Clone();
+}
+
+class Battlefield
+{
+    private Country _country1;
+    private Country _country2;
+    private bool _firstPlayerTurn = true;
+
+    public Battlefield()
+    {
+        _country1 = new Country("Британия");
+        _country2 = new Country("Италия");
+    }
+
+    public void ShowCountrySquads()
+    {
+        _country1.AllySquad.ShowSoldiers();
+        _country2.AllySquad.ShowSoldiers();
+        Console.ReadKey();
+    }
+
+    public void ShowInfo() => Console.WriteLine
+    (
+        $"У первой страны осталось {_country1.AllySquad.GetNumberOfSoldiers} солдат\n" + 
+        $"У второй страны осталось {_country2.AllySquad.GetNumberOfSoldiers} солдат\n"
+    );
+                
+
+    public void RunAction()
+    {
+        ShowCountrySquads();
+
+        while(_country1.IsSquadExist() && _country2.IsSquadExist())
+        {
+            if(_firstPlayerTurn)
+            {
+                Console.WriteLine("Ход за первой страной!");
+                ShowInfo();
+                _country1.AllySquad.AttackEnemies(_country2.AllySquad);
+                _firstPlayerTurn = false;
+            }
+            else
+            {
+                Console.WriteLine("Ход за второй страной!");
+                ShowInfo();
+                _country2.AllySquad.AttackEnemies(_country1.AllySquad);
+                _firstPlayerTurn = true;
+            }
+
+            _country1.AllySquad.RemoveDiedSoldiers();
+            _country2.AllySquad.RemoveDiedSoldiers();
+
+            Console.WriteLine();
+            Console.ReadKey();
+        }
+
+        DetectResult();
+    }
+
+    public void DetectResult()
+    {
+        if(_country1.IsSquadExist())
+            Console.WriteLine("Победа за первой страной!");
+        else
+            Console.WriteLine("Победа за второй страной!");
+    }
 }

@@ -1,0 +1,14 @@
+D:\Soft\учёба\новыйЯЮниор\OOP\war\bin\Debug\net7.0\war.exe
+D:\Soft\учёба\новыйЯЮниор\OOP\war\bin\Debug\net7.0\war.deps.json
+D:\Soft\учёба\новыйЯЮниор\OOP\war\bin\Debug\net7.0\war.runtimeconfig.json
+D:\Soft\учёба\новыйЯЮниор\OOP\war\bin\Debug\net7.0\war.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\war\bin\Debug\net7.0\war.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\war\obj\Debug\net7.0\war.GeneratedMSBuildEditorConfig.editorconfig
+D:\Soft\учёба\новыйЯЮниор\OOP\war\obj\Debug\net7.0\war.AssemblyInfoInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\war\obj\Debug\net7.0\war.AssemblyInfo.cs
+D:\Soft\учёба\новыйЯЮниор\OOP\war\obj\Debug\net7.0\war.csproj.CoreCompileInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\war\obj\Debug\net7.0\war.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\war\obj\Debug\net7.0\refint\war.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\war\obj\Debug\net7.0\war.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\war\obj\Debug\net7.0\war.genruntimeconfig.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\war\obj\Debug\net7.0\ref\war.dll

@@ -38,7 +38,6 @@ class Squad
     public void FillSoldiers()
     {
         int numberOfSoldiers = 4;
-        Random random = new Random();
         ClassesMenu menu = new ClassesMenu();
         
         int minClassIndex = 0;
@@ -46,22 +45,21 @@ class Squad
 
         for(int i = 0; i < numberOfSoldiers; i++)
         {
-            Soldier soldier = menu.GetSoldier(random.Next(minClassIndex, maxClassIndex));    
+            Soldier soldier = menu.GetSoldier(UserUtils.GenerateRandomValue(minClassIndex, maxClassIndex));    
             _soldiers.Add(soldier);
         }
     }
 
     public void AttackEnemies(Squad squad)
     {
-        Random random = new Random();
         int minSoldierIndex = 0;
         int maxEnemySoldierIndex = squad.GetNumberOfSoldiers;
         int maxAllySoldierIndex = GetNumberOfSoldiers;
 
-        Soldier allySoldier = _soldiers[random.Next(minSoldierIndex, maxAllySoldierIndex)];
-        Soldier enemySoldier = squad.GetSoldierById(random.Next(minSoldierIndex, maxEnemySoldierIndex));
+        Soldier allySoldier = _soldiers[UserUtils.GenerateRandomValue(minSoldierIndex, maxAllySoldierIndex)];
+        Soldier enemySoldier = squad.GetSoldierById(UserUtils.GenerateRandomValue(minSoldierIndex, maxEnemySoldierIndex));
 
-        Soldier teammate = _soldiers[random.Next(minSoldierIndex, maxAllySoldierIndex)];
+        Soldier teammate = _soldiers[UserUtils.GenerateRandomValue(minSoldierIndex, maxAllySoldierIndex)];
 
         Console.WriteLine($"Атакует {allySoldier.Name}");
 
@@ -101,7 +99,7 @@ abstract class Soldier
 {
     public Soldier(string name, int health, int damage)
     {
-        HitPercentByItself = 100;
+        HitPercentByItself = 1;
         Name = name;
         Health = health;
         Damage = damage;
@@ -112,20 +110,21 @@ abstract class Soldier
     public int Health {get; protected set;}
     public int Damage {get; protected set;}
 
-    public bool IsHit(double enemyWeaponHitPercent = 100)
+    public bool IsHit(double enemyWeaponHitProbability = 1)
     {
-        Random random = new Random();
         int minProbabilityPercent = 0;
         int maxProbabilityPercent = 100;
 
-        double hitChance = random.Next(minProbabilityPercent, maxProbabilityPercent);
+        double hitChance = UserUtils.GenerateRandomValue(minProbabilityPercent, maxProbabilityPercent);
 
-        return  hitChance / 100  <= HitPercentByItself / 100 * enemyWeaponHitPercent / 100;
+        hitChance /= 100;
+
+        return  hitChance <= HitPercentByItself * enemyWeaponHitProbability;
     }
 
     public virtual void Attack(Soldier enemySoldier)
     {
-        HitPercentByItself = 100;
+        HitPercentByItself = 1;
 
         if(IsHit())
         {
@@ -166,10 +165,9 @@ class Medic : Soldier
 
 class Engineer : Soldier
 {
-    private const int RocketCoolDown = 3;
-
+    private int _rocketCoolDown = 3;
     private int _rocketDamage = 50;
-    private double _rocketHitPercent = 60;
+    private double _rocketHitProbability = 0.6;
     private int _currentStep = 0;
     private int _stepToShoot = 0;
 
@@ -180,9 +178,9 @@ class Engineer : Soldier
         if(_currentStep == _stepToShoot)
         {
             Console.WriteLine("Инженер выстрелил из ракетницы!");
-            _currentStep = RocketCoolDown;
+            _currentStep = _rocketCoolDown;
 
-            if(enemySoldier.IsHit(_rocketHitPercent))
+            if(enemySoldier.IsHit(_rocketHitProbability))
             {
                 enemySoldier.TakeDamage(_rocketDamage);
                 Console.WriteLine($"Успешное попадание по {enemySoldier.Name}!\nТеперь у него {enemySoldier.Health} жизней!");
@@ -203,9 +201,8 @@ class Engineer : Soldier
 
 class Support : Soldier
 {
-    private const int SmokeCoolDown = 3;
-
-    private int hitPercentThroughSmoke = 40;
+    private int _smokeCoolDown = 3;
+    private double hitPercentThroughSmoke = 0.4;
     private int _currentStep = 0;
     private int _stepToShoot = 0;
 
@@ -215,7 +212,7 @@ class Support : Soldier
     {
         if(_currentStep == _stepToShoot)
         {
-            _currentStep = SmokeCoolDown;
+            _currentStep = _smokeCoolDown;
             allySoldier.SetHitPercent(hitPercentThroughSmoke);
             Console.WriteLine($"Поддержка кинула дымовую гранату в союзника {allySoldier.Name}!\nТеперь процент попадания по нему {allySoldier.HitPercentByItself}!\n");
         }
@@ -230,7 +227,7 @@ class Support : Soldier
 
 class Sniper : Soldier
 {
-    private const int CriticalDamageCoolDown = 3;
+    private int _criticalDamageCoolDown = 3;
     
     private int _criticalDamageCoefficient = 3;
     private int _currentStep = 0;
@@ -242,7 +239,7 @@ class Sniper : Soldier
     {
         if(_currentStep == _stepToShoot)
         {
-            _currentStep = CriticalDamageCoolDown;
+            _currentStep = _criticalDamageCoolDown;
             enemySoldier.TakeDamage(Damage * _criticalDamageCoefficient);
             Console.WriteLine($"Критический выстрел по {enemySoldier.Name}!\nНанесено {Damage * _criticalDamageCoefficient} Урона\nУ противника осталось {enemySoldier.Health} жизней\n");
         }
@@ -338,5 +335,17 @@ class Battlefield
             Console.WriteLine("Победа за первой страной!");
         else
             Console.WriteLine("Победа за второй страной!");
+    }
+}
+
+static class UserUtils
+{
+    private static Random s_random;
+
+    static UserUtils() => s_random = new Random();
+
+    static public int GenerateRandomValue(int min, int max)
+    {
+        return s_random.Next(min, max);
     }
 }

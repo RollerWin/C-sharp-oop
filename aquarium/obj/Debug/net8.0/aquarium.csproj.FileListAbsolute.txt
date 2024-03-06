@@ -1,0 +1,15 @@
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\bin\Debug\net8.0\aquarium.exe
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\bin\Debug\net8.0\aquarium.deps.json
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\bin\Debug\net8.0\aquarium.runtimeconfig.json
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\bin\Debug\net8.0\aquarium.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\bin\Debug\net8.0\aquarium.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\obj\Debug\net8.0\aquarium.GeneratedMSBuildEditorConfig.editorconfig
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\obj\Debug\net8.0\aquarium.AssemblyInfoInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\obj\Debug\net8.0\aquarium.AssemblyInfo.cs
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\obj\Debug\net8.0\aquarium.csproj.CoreCompileInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\obj\Debug\net8.0\aquarium.sourcelink.json
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\obj\Debug\net8.0\aquarium.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\obj\Debug\net8.0\refint\aquarium.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\obj\Debug\net8.0\aquarium.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\obj\Debug\net8.0\aquarium.genruntimeconfig.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\aquarium\obj\Debug\net8.0\ref\aquarium.dll

@@ -81,8 +81,6 @@ class Aquarium
         {
             Console.Write("Введите имя рыбы:");
             string fishName = Console.ReadLine();
-
-            Console.Write("\nВведите возраст рыбы");
             int fishAge = ReadCorrectFishAge();
 
             _fishes.Add(new Fish(fishName, fishAge));

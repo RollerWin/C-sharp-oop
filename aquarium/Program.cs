@@ -121,7 +121,7 @@ class Aquarium
         int correctValue = 0;
         bool isCorrect = false;
 
-        while (!isCorrect)
+        while (isCorrect == false)
         {
             Console.Write(prompt);
             string userInput = Console.ReadLine();
@@ -157,7 +157,7 @@ class Fish
 
     public static int GetMaxAge() => MaxAge;
 
-    public void BecomeOlderYear() => Age += 1;
+    public void BecomeOlderYear() => Age++;
 
     public bool IsAlive() => Age < MaxAge;
 

@@ -1,0 +1,15 @@
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\bin\Debug\net8.0\zoo.exe
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\bin\Debug\net8.0\zoo.deps.json
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\bin\Debug\net8.0\zoo.runtimeconfig.json
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\bin\Debug\net8.0\zoo.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\bin\Debug\net8.0\zoo.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\obj\Debug\net8.0\zoo.GeneratedMSBuildEditorConfig.editorconfig
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\obj\Debug\net8.0\zoo.AssemblyInfoInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\obj\Debug\net8.0\zoo.AssemblyInfo.cs
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\obj\Debug\net8.0\zoo.csproj.CoreCompileInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\obj\Debug\net8.0\zoo.sourcelink.json
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\obj\Debug\net8.0\zoo.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\obj\Debug\net8.0\refint\zoo.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\obj\Debug\net8.0\zoo.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\obj\Debug\net8.0\zoo.genruntimeconfig.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\zoo\obj\Debug\net8.0\ref\zoo.dll

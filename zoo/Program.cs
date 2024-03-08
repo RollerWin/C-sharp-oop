@@ -40,7 +40,6 @@ class Animal
         Sound = sound;
     }
 
-
     public string Name {get; private set;}
     public int Age {get; private set;}
     public string Gender {get; private set;}

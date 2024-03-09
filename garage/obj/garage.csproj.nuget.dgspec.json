@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Хранилище для работы\\ЯЮниорНовый\\C-sharp-oop\\garage\\garage.csproj": {}
+    "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\garage\\garage.csproj": {}
   },
   "projects": {
-    "D:\\Хранилище для работы\\ЯЮниорНовый\\C-sharp-oop\\garage\\garage.csproj": {
+    "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\garage\\garage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Хранилище для работы\\ЯЮниорНовый\\C-sharp-oop\\garage\\garage.csproj",
+        "projectUniqueName": "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\garage\\garage.csproj",
         "projectName": "garage",
-        "projectPath": "D:\\Хранилище для работы\\ЯЮниорНовый\\C-sharp-oop\\garage\\garage.csproj",
-        "packagesPath": "C:\\Users\\maryy\\.nuget\\packages\\",
-        "outputPath": "D:\\Хранилище для работы\\ЯЮниорНовый\\C-sharp-oop\\garage\\obj\\",
+        "projectPath": "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\garage\\garage.csproj",
+        "packagesPath": "C:\\Users\\Ринат\\.nuget\\packages\\",
+        "outputPath": "D:\\Soft\\учёба\\новыйЯЮниор\\OOP\\garage\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\maryy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Ринат\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

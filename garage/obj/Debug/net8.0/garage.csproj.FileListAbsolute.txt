@@ -13,3 +13,18 @@ D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\gar
 D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\obj\Debug\net8.0\garage.pdb
 D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\obj\Debug\net8.0\garage.genruntimeconfig.cache
 D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\obj\Debug\net8.0\ref\garage.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\bin\Debug\net8.0\garage.exe
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\bin\Debug\net8.0\garage.deps.json
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\bin\Debug\net8.0\garage.runtimeconfig.json
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\bin\Debug\net8.0\garage.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\bin\Debug\net8.0\garage.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\obj\Debug\net8.0\garage.GeneratedMSBuildEditorConfig.editorconfig
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\obj\Debug\net8.0\garage.AssemblyInfoInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\obj\Debug\net8.0\garage.AssemblyInfo.cs
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\obj\Debug\net8.0\garage.csproj.CoreCompileInputs.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\obj\Debug\net8.0\garage.sourcelink.json
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\obj\Debug\net8.0\garage.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\obj\Debug\net8.0\refint\garage.dll
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\obj\Debug\net8.0\garage.pdb
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\obj\Debug\net8.0\garage.genruntimeconfig.cache
+D:\Soft\учёба\новыйЯЮниор\OOP\garage\obj\Debug\net8.0\ref\garage.dll

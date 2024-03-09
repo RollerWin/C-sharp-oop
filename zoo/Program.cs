@@ -3,7 +3,7 @@
     static void Main(string[] args)
     {
         Zoo zoo = new Zoo();
-        zoo.RunZoo();
+        zoo.OpenGates();
     }
 }
 
@@ -59,6 +59,23 @@ class Zoo
         AddAnimalsToCage();
     }
 
+    public void OpenGates()
+    {
+        const int MaxNumberOfVisits = 3;
+
+        for(int i = 0; i < MaxNumberOfVisits; i++)
+        {
+            ShowCages();
+            int userInput = ReadCorrectIndex(_cages.Count);
+            _cages[userInput - 1].ShowInfo();
+
+            Console.ReadKey();
+            Console.Clear();
+        }
+
+        Console.WriteLine("Зоопарк закрывается! Всего хорошего!");
+    }
+
     private void AddCages()
     {
         _cages.Add(new Cage("Cats"));
@@ -85,6 +102,7 @@ class Zoo
         
         for(int i = 0; i < _cages.Count; i++)
             Console.WriteLine($"{i + 1}: Подойти к вольеру с {_cages[i].NameOfAnimalFamily}");
+            
     }
 
     private int ReadCorrectIndex(int limit)
@@ -110,22 +128,5 @@ class Zoo
         }
 
         return correctValue;
-    }
-
-    public void RunZoo()
-    {
-        const int MaxNumberOfVisits = 3;
-
-        for(int i = 0; i < MaxNumberOfVisits; i++)
-        {
-            ShowCages();
-            int userInput = ReadCorrectIndex(_cages.Count);
-            _cages[userInput - 1].ShowInfo();
-
-            Console.ReadKey();
-            Console.Clear();
-        }
-
-        Console.WriteLine("Зоопарк закрывается! Всего хорошего!");
     }
 }

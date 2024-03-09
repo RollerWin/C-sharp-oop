@@ -1,0 +1,15 @@
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\obj\Debug\net8.0\garage.GeneratedMSBuildEditorConfig.editorconfig
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\obj\Debug\net8.0\garage.AssemblyInfoInputs.cache
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\obj\Debug\net8.0\garage.AssemblyInfo.cs
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\obj\Debug\net8.0\garage.csproj.CoreCompileInputs.cache
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\obj\Debug\net8.0\garage.sourcelink.json
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\bin\Debug\net8.0\garage.exe
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\bin\Debug\net8.0\garage.deps.json
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\bin\Debug\net8.0\garage.runtimeconfig.json
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\bin\Debug\net8.0\garage.dll
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\bin\Debug\net8.0\garage.pdb
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\obj\Debug\net8.0\garage.dll
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\obj\Debug\net8.0\refint\garage.dll
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\obj\Debug\net8.0\garage.pdb
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\obj\Debug\net8.0\garage.genruntimeconfig.cache
+D:\Хранилище для работы\ЯЮниорНовый\C-sharp-oop\garage\obj\Debug\net8.0\ref\garage.dll

@@ -48,6 +48,7 @@
 class CarService
 {
     private const int PenaltyFee = 100;
+    private const int PriceForRepair = 50;
 
     private StoreHouse _storeHouse;
 
@@ -69,18 +70,27 @@ class CarService
 
         if(_storeHouse.IsDetailExist(client.BrokenDetail.Name))
         {
-            int userInput = ReadCorrectIndex(_storeHouse.GetNumberOfDetails());
-            Detail usedDetail = _storeHouse.GetDetail(userInput - 1);
-
-            if(usedDetail.Name == client.BrokenDetail.Name)
+            if(client.Money >= client.BrokenDetail.Price + PriceForRepair)
             {
-                Console.WriteLine($"Клиент доволен! Оплата: {usedDetail.Price}");
-                Money += usedDetail.Price;
+                int userInput = ReadCorrectIndex(_storeHouse.GetNumberOfDetails());
+                Detail usedDetail = _storeHouse.GetDetail(userInput - 1);
+
+                if(usedDetail.Name == client.BrokenDetail.Name)
+                {
+                    int totalPrice = usedDetail.Price + PriceForRepair;
+                    Console.WriteLine($"Клиент доволен! Оплата: {totalPrice}");
+                    client.PayForService(totalPrice);
+                    Money += PriceForRepair;
+                }
+                else
+                {
+                    Console.WriteLine($"Деталь не та! Штраф: {PenaltyFee}");
+                    Money -= PenaltyFee;
+                }
             }
             else
             {
-                Console.WriteLine($"Деталь не та! Штраф: {PenaltyFee}");
-                Money -= PenaltyFee;
+                Console.WriteLine("Клиент не может заплатить за ремонт!");
             }
         }
         else
@@ -122,7 +132,7 @@ class Client
 {
     public Client()
     {
-        int minClientMoney = 20;
+        int minClientMoney = 50;
         int maxClientMoney = 400;
         Money = UserUtils.GenerateRandomValue(minClientMoney, maxClientMoney);
         BrokenDetail = DetailsTemplate.GetRandomDetail();
@@ -130,6 +140,8 @@ class Client
 
     public int Money {get; private set;}
     public Detail BrokenDetail {get; private set;}
+
+    public void PayForService(int Price) => Money -= Price;
 }
 
 class Detail

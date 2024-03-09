@@ -3,7 +3,7 @@
     static void Main(string[] args)
     {
         Zoo zoo = new Zoo();
-        zoo.VisitZoo();
+        zoo.OpenGates();
     }
 }
 
@@ -58,8 +58,7 @@ class Zoo
         AddCages();
         AddAnimalsToCage();
     }
-
-    public void VisitZoo()
+    public void OpenGates()
     {
         const int MaxNumberOfVisits = 3;
 
@@ -102,6 +101,7 @@ class Zoo
         
         for(int i = 0; i < _cages.Count; i++)
             Console.WriteLine($"{i + 1}: Подойти к вольеру с {_cages[i].NameOfAnimalFamily}");
+            
     }
 
     private int ReadCorrectIndex(int limit)

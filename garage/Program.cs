@@ -176,8 +176,7 @@ class StoreHouse
     {
         Detail tempDetail = _details[index];
         _details.RemoveAt(index);
-
-        return new Detail(tempDetail.Name, tempDetail.Price);
+        return tempDetail;
     }
 
     public bool IsDetailExist(string detailName)
